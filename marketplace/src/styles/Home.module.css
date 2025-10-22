@@ -1,0 +1,133 @@
+/* src/app/HomePage.module.css */
+
+/* --- Hero Section --- */
+
+.hero {
+  position: relative;
+  height: calc(100vh - 4.5rem); /* 4.5rem คือความสูง Navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-white);
+  padding: 1.5rem;
+  background-size: cover;
+  background-position: center;
+  /* 💡 คุณต้องเปลี่ยน URL รูปนี้เอง */
+  background-image: url('https://images.unsplash.com/photo-1463171379579-3f36b6fef853?fit=crop&w=1920&q=80');
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  /* ไล่สีทับรูปภาพให้ตัวหนังสือชัดขึ้น */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+}
+
+.heroTitle {
+  font-size: 4rem; /* text-6xl */
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.heroSubtitle {
+  font-size: 1.25rem; /* text-xl */
+  margin-bottom: 2.5rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.heroButton {
+  background-color: var(--color-secondary-green);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px; /* rounded-full */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(21, 128, 61, 0.4);
+}
+
+.heroButton:hover {
+  background-color: var(--color-primary-green);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(21, 128, 61, 0.5);
+}
+
+/* --- Features Section --- */
+
+.features {
+  padding: 6rem 0; /* py-24 */
+  background-color: var(--color-background-light);
+  text-align: center;
+}
+
+.featuresTitle {
+  font-size: 3rem; /* text-5xl */
+  margin-bottom: 1.5rem;
+}
+
+.featuresSubtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  max-width: 800px;
+  margin: 0 auto 5rem auto;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.featureItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featureIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem; /* w-20 */
+  height: 5rem; /* h-20 */
+  background-color: var(--color-light-green);
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Icon (ต้องใช้ inline style ใน JSX ช่วย) */
+.featureIcon {
+  width: 2.5rem; /* w-10 */
+  height: 2.5rem; /* h-10 */
+  color: var(--color-primary-green);
+}
+
+.featureItem h3 {
+  font-size: 1.875rem; /* text-3xl */
+  margin-bottom: 0.75rem;
+}
+
+.featureItem p {
+  color: var(--color-text-secondary);
+}
+
+/* Responsive สำหรับ Grid */
+@media (max-width: 768px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .heroTitle {
+    font-size: 3rem;
+  }
+}
